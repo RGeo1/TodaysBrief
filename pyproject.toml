@@ -1,5 +1,26 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
 [project]
-name = "test"
+name = "today-brief"
 version = "0.1.0"
+description = "Personal calendar daily briefing email"
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+  "icalendar>=6.0",
+  "recurring-ical-events>=3.6",
+  "tzdata>=2024.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+today-brief = "brief.cli:main"
+
+[tool.setuptools]
+packages = ["brief"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
