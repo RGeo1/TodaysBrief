@@ -100,6 +100,12 @@ class App(tk.Tk):
     def __init__(self) -> None:
         super().__init__()
         self.title("今日幕僚 · 配置")
+        try:
+            icon_path = BASE / "assets" / "today_brief.ico"
+            if icon_path.exists():
+                self.iconbitmap(str(icon_path))
+        except Exception:
+            pass
         self.geometry("960x840")
         self.minsize(900, 720)
         self.base = BASE
