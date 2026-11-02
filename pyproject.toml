@@ -15,9 +15,13 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8.0"]
+build = ["pyinstaller>=6.0", "pillow>=10.0"]
 
 [project.scripts]
 today-brief = "brief.cli:main"
+
+[project.gui-scripts]
+today-brief-gui = "brief.gui:main"
 
 [tool.setuptools]
 packages = ["brief"]
